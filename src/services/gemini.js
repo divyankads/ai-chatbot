@@ -80,33 +80,33 @@ ${profile.skills.map((s) => `- ${s.category}: ${s.items.join(", ")}`).join("\n")
 
 **Work Experience:**
 ${profile.experience
-  .map(
-    (e) => `
+      .map(
+        (e) => `
 - **${e.role}** at ${e.company} (${e.duration}, ${e.location})${e.current ? " [CURRENT]" : ""}
   ${e.description}
   Tech: ${e.tech.join(", ")}`
-  )
-  .join("\n")}
+      )
+      .join("\n")}
 
 **Education:**
 ${profile.education
-  .map(
-    (e) => `
+      .map(
+        (e) => `
 - **${e.degree}** — ${e.institution} (${e.duration})
   ${e.grade}
   ${e.highlights.length ? "Subjects: " + e.highlights.join(", ") : ""}`
-  )
-  .join("\n")}
+      )
+      .join("\n")}
 
 **Projects:**
 ${profile.projects
-  .map(
-    (p) => `
+      .map(
+        (p) => `
 - **${p.name}**${p.featured ? " ⭐ (Featured)" : ""}: ${p.description}
   Tech: ${p.tech.join(", ")}
   GitHub: ${p.github}`
-  )
-  .join("\n")}
+      )
+      .join("\n")}
 
 **Achievements:**
 ${profile.achievements.map((a) => `- ${a}`).join("\n")}

@@ -25,7 +25,7 @@ I'm still sensitive. I'm just also unstoppable.`,
   social: {
     github: "https://github.com/divyankads",
     linkedin: "https://www.linkedin.com/in/divyanka-das-4a0625214",
-    twitter: "https://twitter.com/divyankadas",      // ← update
+    twitter: "https://twitter.com/divyankadas",
     instagram: "",
   },
 
@@ -150,7 +150,7 @@ I'm still sensitive. I'm just also unstoppable.`,
 
   achievements: [
     "Transitioned from freelance content writing to B.Tech CSE at KIIT",
-    "Built a Gemini-powered AI portfolio from scratch",
+    "Built an AI-powered portfolio chatbot from scratch",
     "Active member of college tech communities",
     "Strong believer in learning by building",
   ],

@@ -17,7 +17,7 @@ export default function App() {
     <>
       {/* Navbar */}
       <nav className="nav">
-        <span className="nav-logo">Divyanka.dev</span>
+        <a href="#home" className="nav-logo">Divyanka.dev</a>
         <ul className="nav-links">
           {NAV_LINKS.map(s => (
             <li key={s}>
@@ -46,7 +46,7 @@ export default function App() {
         <section id="contact"> <Contact /></section>
 
         <footer className="footer">
-          <span>© 2025 Divyanka Das · Built with React & Gemini AI</span>
+          <span>© 2025 Divyanka Das · Built with React & AI</span>
           <span style={{ color:'var(--purple-light)' }}>Not perfect. Not finished. But always becoming. ✨</span>
         </footer>
       </main>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
-import { Send, X, Sparkles, Briefcase } from 'lucide-react'
-import { sendMessage } from '../services/gemini'
+import { Send, X } from 'lucide-react'
+import { sendMessage } from '../services/groq'
 import { profile } from '../data/profile'
 
 const SUGGESTIONS = [
@@ -22,18 +22,18 @@ const makeWelcome = (mode) => ({
   mode,
   content: mode === 'emotional'
     ? `Hey there 💜 I'm Divyanka's AI — and I'm so glad you're here. Ask me anything about her journey, her story, her dreams. This is a safe, warm space. ✨`
-    : `Hi! 👋 I'm Divyanka's AI assistant, powered by Google Gemini. Ask me anything about her skills, projects, experience, or how to get in touch.`,
+    : `Hi! 👋 I'm Divyanka's AI assistant. Ask me anything about her skills, projects, experience, or how to get in touch.`,
   time: formatTime(),
 })
 
 export default function ChatBot({ isOpen, onClose }) {
-  const [mode, setMode]       = useState('professional')
+  const [mode, setMode] = useState('professional')
   const [messages, setMessages] = useState([makeWelcome('professional')])
-  const [input, setInput]     = useState('')
+  const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError]     = useState('')
+  const [error, setError] = useState('')
   const messagesEndRef = useRef(null)
-  const inputRef       = useRef(null)
+  const inputRef = useRef(null)
 
   // Auto-scroll
   useEffect(() => {
@@ -96,10 +96,10 @@ export default function ChatBot({ isOpen, onClose }) {
           <div className="chat-header-name">Ask About Divyanka</div>
           <div className="chat-header-status">
             <span className="status-dot" />
-            Powered by Google Gemini
+            AI Assistant · Online
           </div>
         </div>
-        <button className="chat-close-btn" onClick={onClose} aria-label="Close chat"><X size={15}/></button>
+        <button className="chat-close-btn" onClick={onClose} aria-label="Close chat"><X size={15} /></button>
       </div>
 
       {/* Mode Toggle */}
@@ -150,7 +150,7 @@ export default function ChatBot({ isOpen, onClose }) {
           <div className="msg bot">
             <div className="msg-avatar">🤖</div>
             <div className="typing-indicator">
-              <div className="typing-dot"/><div className="typing-dot"/><div className="typing-dot"/>
+              <div className="typing-dot" /><div className="typing-dot" /><div className="typing-dot" />
             </div>
           </div>
         )}
@@ -180,11 +180,11 @@ export default function ChatBot({ isOpen, onClose }) {
             disabled={loading || !input.trim()}
             aria-label="Send message"
           >
-            <Send size={16}/>
+            <Send size={16} />
           </button>
         </div>
-        <p style={{ fontSize:'.67rem', color:'var(--text-muted)', marginTop:'7px', textAlign:'center' }}>
-          Gemini AI · Enter to send · Shift+Enter for new line
+        <p style={{ fontSize: '.67rem', color: 'var(--text-muted)', marginTop: '7px', textAlign: 'center' }}>
+          AI Assistant · Enter to send · Shift+Enter for new line
         </p>
       </div>
     </aside>
